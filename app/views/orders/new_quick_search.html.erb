@@ -1,0 +1,5 @@
+<%= simple_form_for :order, url: create_quick_search_path do |f| %>
+  	<%= f.input :location, label: 'Wheres about do you live?' %>
+    <%= f.input :term %>
+    <%= f.button :submit %>
+<% end %>

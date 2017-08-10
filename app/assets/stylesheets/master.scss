@@ -1,0 +1,22 @@
+@import "bootstrap";
+
+body {
+	margin: 10px;
+	border: 5px solid #b3ffb3;
+	border-radius: 5px;
+	background: linear-gradient(#ffb3ff, white) no-repeat;
+	height: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+h1.hero {
+	color: #b8bbc1;
+	text-align: center;
+}
+
+.modal-button {
+	text-align: center;
+}

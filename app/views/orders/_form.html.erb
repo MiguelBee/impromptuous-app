@@ -1,0 +1,23 @@
+<%= simple_form_for Order.new do |f| %>
+  <div class="modal-body">
+    <%= f.input :address1, label: 'Wheres about do you live?' %>
+    <%= f.input :address2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :how_many_to_feed %>
+    <%= f.input :vegeterian %>
+    <%= f.input :max_amount, label: "What's your max spending amount?" %>
+  </div>
+  <div class="modal-footer">
+  <%= form_tag orders_path(@order) do %>
+
+   <!-- <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Get Ready for something delicious!"
+          data-amount="set amount"
+          data-locale="auto">
+        </script>-->
+  <% end %>
+    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+   </div>-->
+<% end %>

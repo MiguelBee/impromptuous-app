@@ -55,6 +55,4 @@ gem 'simple_form'
 
 gem 'figaro'
 
-gem 'stripe'
-
 gem "http"

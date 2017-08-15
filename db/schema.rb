@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619164648) do
+ActiveRecord::Schema.define(version: 20170812233139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,16 +19,15 @@ ActiveRecord::Schema.define(version: 20170619164648) do
     t.boolean  "vegeterian"
     t.integer  "how_many_to_feed"
     t.string   "address1"
-    t.boolean  "cold"
     t.integer  "max_amount"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "email"
-    t.integer  "credit_card"
     t.string   "address2"
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
+    t.integer  "radius"
   end
 
 end

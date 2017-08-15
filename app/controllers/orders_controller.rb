@@ -4,56 +4,44 @@ class OrdersController < ApplicationController
 		@order = Order.all
 	end
 
-	def new
+	def delivery
 		@order = Order.new
 	end
 
-	def delivery
+	def create_delivery
+		@order = Order.create(delivery_params)
+		redirect_to order_path(@order)
 	end
 
 	def eat_out
+		@order = Order.new
 	end
 
-	def create
-		# Amount in cents
-	#	@amount = (current_order.max_amount * 100).to_i
-
-	#	customer = Stripe::Customer.create(
-	#	  :email => params[:stripeEmail],
-	#	  :source  => params[:stripeToken]
-	#	)
-
-	#	charge = Stripe::Charge.create(
-	#	  :customer    => customer.id,
-	#	  :amount      => @amount,
-	#	  :description => 'Impromptuous Food Order',
-	#	  :currency    => 'usd'
-  #	)
-
-		@order = Order.create(order_params)
-		redirect_to root_path
-	#rescue Stripe::CardError => e
-	 # flash[:error] = e.message
-	#  redirect_to root_path
+	def create_eat_out
+		@order = Order.create(eat_out_params)
+		#choice = results.sort_by("RANDOM()").first
+		redirect_to order_path(@order)
 	end
 
-	def new_quick_search
+	def show
+		@order = Order.find(params[:id])
+		if @order.radius.present?
+			radius_in_kilometers = (@order.radius*160).to_i
+			logger.info "this radius in kilometers is #{radius_in_kilometers}"
+			@results = YelpApiService.business_search(@order.zipcode, radius_in_kilometers)
+		else
+			@results = YelpApiService.delivery_search(@order.address1, @order.city, @order.state)
+		end
 	end
 
-	def create_quick_search
-		term = params[:order][:term]
-		location = params[:order][:location]
-		@results = YelpApiService.delivery_search(term, location)
-	end
-	
 	private
 
-	def current_order
-		@current_order ||= Order.find(parms[:order_id])
+	def eat_out_params
+		params.require(:order).permit(:radius, :zipcode)
 	end
 
-	def order_params
-		params.require(:order).permit(:vegeterian, :email, :how_many_to_feed, :cold, :max_amount, :address1, :address2, :city, :state, :zip)
+	def delivery_params
+		params.require(:order).permit(:address1, :address2, :city, :state)
 	end
 
 end

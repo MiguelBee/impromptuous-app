@@ -2,15 +2,14 @@ require 'rest-client'
 
 class YelpApiService
 
-	def self.delivery_search(term, location)
-		url = "https://api.yelp.com/v3/transactions/delivery/search?term=#{term}&location=#{location}&limit=5"
-		#Rails.logger.info headers
+	def self.delivery_search(address1, city, state)
+		url = "https://api.yelp.com/v3/transactions/delivery/search?term=food&location=#{address1}#{city}#{state}"
 		response = RestClient.get(url, headers )
 		JSON.parse(response.body)
 	end
 
-	def self.business_search(term, location)
-		url = "something"
+	def self.business_search(location, radius)
+		url = "https://api.yelp.com/v3/businesses/search?location=#{location}&term=food&radius=#{radius}"
 		response = RestClient.get(url, headers)
 		JSON.parse(response.body)
 	end

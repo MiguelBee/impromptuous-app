@@ -1,22 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Fontdiner+Swanky');
 @import "bootstrap";
 
-body {
-	margin: 10px;
-	border: 5px solid #b3ffb3;
-	border-radius: 5px;
-	background: linear-gradient(#ffb3ff, white) no-repeat;
+html, body {
 	height: 100%;
+	width: 100%;
 }
 
-html {
-	height: 100%;
-}
-
-h1.hero {
+.title, h2 {
 	color: #b8bbc1;
 	text-align: center;
+	font-family: 'Fontdiner Swanky', cursive;
 }
 
-.modal-button {
-	text-align: center;
+.title {
+	padding-top: 20px;
+}
+
+.first_letter {
+	font-size: 100px;
+}
+
+.hero  {
+	background-color: #ffbb00;
+	border-radius: 5px;
+	height: 50%;
+	margin: auto;
+	width: 95%;
+	border: 5px solid #b8bbc1;
+}
+
+.btn {
+	margin: auto;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+p {
+	font-size: 15px;
+}
+
+
+.features {
+	margin: auto;
+	width: 100%;
+	font-family: 'Fontdiner Swanky', cursive;
+}
+
+.feature {
+		box-shadow: 10px 10px 5px #888888;
+		margin: auto;
+    font-size: 30px;
+    position: relative;
+    border-radius: 75%;
+    background: #fb6542;
+    width: 40px;
+    height: 90px;
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    line-height: 16px;
+    transform: rotate(-11deg);
+    -ms-transform: rotate(-11deg); /* IE 9 */
+    -webkit-transform: rotate(-11deg); /* Opera, Chrome, and Safari */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  /*background-color: #f5f5f5;*/
 }

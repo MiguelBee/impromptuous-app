@@ -4,17 +4,9 @@ class OrdersController < ApplicationController
 		@order = Order.all
 	end
 
-	def delivery
-		@order = Order.new
-	end
-
 	def create_delivery
 		@order = Order.create(delivery_params)
 		redirect_to order_path(@order)
-	end
-
-	def eat_out
-		@order = Order.new
 	end
 
 	def create_eat_out

@@ -1,9 +1,89 @@
-  <h1 class="hero"> Impromptuous </h1>
+<div class="hero">
+  <h1 class="title"> <strong class="first_letter">i</strong>	MPROMPTUOUS </h1>
   
-  <div>
-    <%= link_to "Delivery?", delivery_path %>
-    <br >
-      <p> OR </p>
-    <%= link_to "Eat Out?", eat_out_path %>
+  <br >
+  <br >
+  
+  <!--modal trigger buttons-->
+  <div class="row">
+    	<%= link_to "Delivery?", delivery_path, class: "btn btn-success btn-lg", data: {toggle: 'modal', target: '#delivery'} %>
+    		<p><strong> Choose Your Preference</strong> </p>
+    	<%= link_to "Eat Out?", eat_out_path, class: "btn btn-success btn-lg", data: {toggle: 'modal', target: '#eatOut'} %>
   </div>
-  
+  <br >
+  <h2><u> For the bold and daring</u> </h2>
+</div>
+
+<br>
+<br>
+
+<div class="features row">
+	<div class="feature col-3">
+		<h3> Decisions, Decisions </h3>
+			<p> Let Impromptuous take the decision making out of the equation
+			</p>
+	</div>
+	<div class="feature col-3">
+		<h3>Inny or Outy?</h3>
+			<p> Looking to eat out or in? We got that covered </p>
+	</div>
+	<div class="feature col-3">
+		<h3> No Sign-up! </h3>
+			<p> Quick and dirty without having to sign-up</p>
+	</div>
+</div>
+
+    <!--delivery Modal -->
+    <div class="modal fade" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Let's See Who's deliverying</h4>
+          </div>
+            <%= simple_form_for Order.new, url: create_delivery_path do |f| %>
+          <div class="modal-body">
+          	<%= f.input :address1, placeholder: 'Enter Your Address' %>
+  					<%= f.input :city, placeholder: 'Enter Your City' %>
+  					<%= f.input :state, placeholder: 'Enter your state' %>
+          </div>
+        
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit 'Let\'s see who\'s delivering' %>
+          </div>
+          
+          <% end %>
+          
+        </div>
+      </div>
+    </div>
+
+    <!--eatOut Modal -->
+    <div class="modal fade" id="eatOut" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Let's find eateries by you</h4>
+          </div>
+            <%= simple_form_for Order.new, url: create_eat_out_path do |f| %>
+          <div class="modal-body">
+				  	<%= f.input :zipcode, placeholder: "What is your zipcode?" %>
+				  	<%= f.input :radius, placeholder: "Within what radius?(25 Miles Max)" %>
+          </div>
+        
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit "Let's see what happens"  %>
+          </div>
+          
+          <% end %>
+          
+        </div>
+      </div>
+    </div>

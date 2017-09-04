@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Fontdiner+Swanky');
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Fontdiner+Swanky');
+
 
 html, body {
 	height: 100%;
@@ -69,4 +70,26 @@ p {
   /* Set the fixed height of the footer here */
   height: 60px;
   /*background-color: #f5f5f5;*/
+}
+
+img {
+	border-radius: 100%;
+	display: block;
+  margin: auto;
+  width: 15%;
+  max-width: 25%;
+  height: 15%;
+  max-height: 25%;
+  border: 2px solid #b8bbc1;
+}
+
+.clear {
+	clear: both;
+}
+
+.result_box {
+	margin-top: 5px;
+	text-align: center;
+	font-family: 'Fontdiner Swanky', cursive;
+	background-color: #ffbb00;
 }

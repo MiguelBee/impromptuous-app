@@ -18,6 +18,6 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.dat :at => "12:00 am" do
+every 1.day :at => "12:00 am" do
 	runner "Order.destroy_all"
 end

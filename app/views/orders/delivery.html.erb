@@ -5,7 +5,7 @@
 			<%= "#{@random_choice['location']['city']}" %>
 			<%= "#{@random_choice['location']['zip_code']}" %>
 			<% if @random_choice['image_url'].present? %>
-				<img src=<%= "#{@random_choice['image_url']}" %>>
+				<img src=<%= "#{@random_choice['image_url']}"%>, class: "randomChoicepic" >
 			<% end %>
 		<p> Go ahead, give them a ring at <%= "#{@random_choice['display_phone']}"%></p>
 		<h3> Be Bold !</h3>

@@ -1,5 +1,8 @@
 class CreateOrders < ActiveRecord::Migration[5.0]
   def change
-    rename_table :prompts, :orders
-   end
+    create_table :orders do |t|
+
+      t.timestamps
+    end
+  end
 end

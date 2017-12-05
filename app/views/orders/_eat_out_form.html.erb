@@ -1,9 +1,0 @@
-<%= simple_form_for @order, url: create_eat_out_path do |f| %>
-		<%= f.input :zipcode, placeholder: "What is your zipcode?", error: 'zipcode is mandatory' %>
-		<%= f.input :radius, placeholder: "Within what radius?(25 Miles Max)" %>
-	<div class="modal-footer">
-    <%= f.submit "Let's see what happens!" %>
-  </div>
-<% end %>
-        
-          

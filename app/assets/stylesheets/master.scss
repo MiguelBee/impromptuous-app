@@ -72,7 +72,7 @@ p {
   /*background-color: #f5f5f5;*/
 }
 
-.randomChoicepic {
+img.randomChoicepic {
 	border-radius: 100%;
 	display: block;
   margin: auto;
@@ -98,4 +98,13 @@ p {
 	height: 50px;
 	width: 60px;
 	margin-bottom: 10px;
+}
+
+.alert {
+	text-align: center;
+	color: red;
+	font-size: 20px;
+	position: relative;
+	padding-bottom: 0;
+	margin: 0;
 }

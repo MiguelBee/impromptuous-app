@@ -1,0 +1,7 @@
+<%= simple_form_for EatOut.new do |f| %>
+		<%= f.input :zipcode, placeholder: "What is your zipcode?", class: "form_control"  %>
+		<%= f.input :radius, placeholder: "Within what radius?(25 Miles Max)", class: "form_control" %>
+	<div class="modal-footer">
+    <%= f.submit "Let's see what happens!" %>
+  </div>
+<% end %>

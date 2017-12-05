@@ -1,7 +1,7 @@
-<%= simple_form_for @order, url: create_delivery_path do |f| %>
+<%= simple_form_for Delivery.new do |f| %>
    	<%= f.input :address1, placeholder: 'Enter Your Address' %>
 		<%= f.input :city, placeholder: 'Enter Your City' %>
-		<%= f.input :state, placeholder: 'Enter your state', error: 'State is mandatory' %>
+		<%= f.input :state, placeholder: 'Enter your state' %>
   <div class="modal-footer">
     <%= f.submit 'Let\'s see who\'s delivering' %>
   </div>

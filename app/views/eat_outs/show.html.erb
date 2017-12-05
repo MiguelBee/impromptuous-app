@@ -1,0 +1,23 @@
+
+<!--<script>
+	var jsonArray = $("h1").val(<%= @results %>);
+	var oneRandomOrder = function(){
+		var randomOrder = jsonArray[Math.floor(Math.random()*jsonArray.length)];
+		$.get(oneRandomOrder);
+	};
+</script>-->
+
+<div class="result_box">
+	<h1>We Found Something for you! </h1>
+		<h3> <u><%="#{@random_choice['name']}"%></u> is located right near you at:</h3>
+			<%= "#{@random_choice['location']['address1']}" %><br/>
+			<%= "#{@random_choice['location']['city']}" %>
+			<%= "#{@random_choice['location']['zip_code']}" %>
+		<img src=<%= "#{@random_choice['image_url']}" %>, class="randomChoicepic"/>
+		<h3> Be Bold !</h3><br />
+		<h4> Check out what people are saying <%= link_to "here", "#{@random_choice['url']}" %></h4>
+</div>
+<div class="clear"/></div>
+<div class="btn btn-success">
+	<%= link_to "Give it Another Spin",  root_path %>
+</div>

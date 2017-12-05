@@ -1,5 +1,8 @@
 <div class="hero">
   <h1 class="title"> <strong class="first_letter">i</strong>MPROMPTUOUS<span> &#8480;</span></h1>
+  <% if flash.alert %>
+    <div class="alert"><%= flash.alert %></div>
+  <% end %>
   <br >
   <br >
   
@@ -47,7 +50,7 @@
             <h4 class="modal-title" id="myModalLabel">Let's see who is delivering near you!</h4>
           </div>
           <div class="modal-body">
-            <%= render "delivery_form" %>
+            <%= render "deliveries/create" %>
           </div>
         </div>
       </div>
@@ -64,7 +67,7 @@
             <h4 class="modal-title" id="myModalLabel">Let's find eateries by you</h4>
           </div>
           <div class="modal-body">
-            <%= render "eat_out_form" %>
+            <%= render "eat_outs/create" %>
           </div>
         </div>
       </div>

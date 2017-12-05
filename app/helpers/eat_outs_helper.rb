@@ -1,0 +1,2 @@
+module EatOutsHelper
+end

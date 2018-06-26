@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20171203055014) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "delivery", force: :cascade do |t|
+    t.string "address1"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+  end
+
+  create_table "eat_out", force: :cascade do |t|
+    t.integer "zipcode"
+    t.integer "radius"
+  end
+
   create_table "eat_outs", force: :cascade do |t|
     t.integer  "zipcode"
     t.integer  "radius"
@@ -34,6 +46,18 @@ ActiveRecord::Schema.define(version: 20171203055014) do
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prompts", force: :cascade do |t|
+    t.boolean  "vegeterian"
+    t.integer  "how_many_to_feed"
+    t.integer  "zipcode"
+    t.boolean  "cold"
+    t.integer  "max_amount"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "email"
+    t.integer  "credit_card"
   end
 
 end

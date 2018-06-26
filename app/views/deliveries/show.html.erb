@@ -5,11 +5,11 @@
 			<%= "#{@random_choice['location']['city']}" %>
 			<%= "#{@random_choice['location']['zip_code']}" %>
 			<% if @random_choice['image_url'].present? %>
-				<img src=<%= "#{@random_choice['image_url']}"%>, class: "randomChoicepic" >
+				<img src=<%= "#{@random_choice['image_url']}"%> class="randomChoicepic">
 			<% end %>
 		<p> Go ahead, give them a ring at <%= "#{@random_choice['display_phone']}"%></p>
 		<h3> Be Bold !</h3>
-		<h4> Check out what people are saying <%= link_to "here", "#{@random_choice['url']}" %></h4>
+		<h4> Check out what people are saying <%= link_to "here", "#{@random_choice['url']}", target: '_blank' %></h4>
 </div>
 <div class="clear"/></div>
 <div class="btn btn-success">

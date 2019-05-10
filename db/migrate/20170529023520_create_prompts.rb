@@ -1,4 +1,4 @@
-s CreatePrompts < ActiveRecord::Migration[5.0]
+class CreatePrompts < ActiveRecord::Migration[5.0]
   def change
     create_table :prompts do |t|
     	t.boolean :vegeterian
